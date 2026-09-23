@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#102b3e"><title>UniTroca | UNIFEI Itabira</title><style>
+:root{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:#172d36;background:#f7f9f8}*{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit}.top{background:#fff;border-bottom:1px solid #e2eae8;padding:16px max(24px,calc((100vw - 1240px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px;position:sticky;top:0;z-index:2;box-shadow:0 2px 15px #1b4a4c0a}.brand{display:inline-flex;align-items:center;gap:10px;color:#112f38;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.55rem;font-weight:800;letter-spacing:-.055em;white-space:nowrap}.brand span{color:#138879}.brand svg{width:42px;height:42px;flex:none}.pill{font-size:.83rem;font-weight:700;color:#557078;border-radius:50px;padding:9px 13px;background:#f0f5f4}.primary{border:0;border-radius:12px;background:#137e71;color:white;font-weight:800;padding:13px 20px;transition:background .2s,transform .2s;white-space:nowrap}.primary:hover{background:#0a665b;transform:translateY(-1px)}.wrap{max-width:1240px;margin:auto;padding:24px 24px 70px}.intro{background:#12353d;color:#fff;border-radius:24px;padding:42px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden;margin-bottom:22px}.intro:after{content:'';position:absolute;border:1px solid #ffffff22;border-radius:50%;width:370px;height:370px;right:-130px;top:-160px;pointer-events:none}.intro>div{position:relative;z-index:1}h1{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:clamp(2rem,4vw,3.4rem);letter-spacing:-.06em;line-height:1.13;margin:9px 0 14px;max-width:690px}.eyebrow{text-transform:uppercase;font-size:.76rem;color:#71d6c0;font-weight:800;letter-spacing:.18em}.intro p{color:#d3e5e2;margin:0;font-size:1.03rem;line-height:1.5}.notice{background:#ffffff14;color:#e3f4ef;border:1px solid #ffffff30;border-radius:15px;padding:19px 20px;font-size:.93rem;max-width:280px;line-height:1.55;flex:none}.controls{background:#fff;border:1px solid #e1e9e7;border-radius:17px;padding:17px;display:grid;grid-template-columns:minmax(220px,2fr) repeat(4,minmax(130px,1fr));gap:12px;box-shadow:0 8px 26px #213f4910}.controls input,.controls select,.form input,.form select,.form textarea{width:100%;border:1px solid #d2dfdc;background:#fff;border-radius:10px;padding:12px;color:#173044;min-height:47px}.controls input:focus,.controls select:focus,.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid #169480;outline-offset:1px}.section-head{display:flex;justify-content:space-between;align-items:center;margin:29px 0 16px}h2{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.3rem;letter-spacing:-.035em;margin:0}.count{color:#627a80;font-size:.91rem}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:19px}.card{background:white;border:1px solid #e3eae8;border-radius:17px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 7px 23px #1730440c;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-3px);box-shadow:0 13px 27px #1730441b}.card[data-listing-id]{cursor:pointer}.card:focus-visible,.listing-title:focus-visible{outline:3px solid #168a7e;outline-offset:3px}.listing-title{text-decoration:none}.listing-title:hover{text-decoration:underline;text-underline-offset:3px}.photo{height:194px;background:#e4eeeb;position:relative;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.photo .fallback{height:100%;display:grid;place-items:center;font-size:4rem;background:linear-gradient(145deg,#e1f1ec,#ecf2f3)}.badge{position:absolute;top:12px;left:12px;background:#fff;color:#23665d;border-radius:8px;padding:6px 9px;font-size:.75rem;font-weight:800;box-shadow:0 2px 10px #0002}.content{padding:18px;display:flex;flex:1;flex-direction:column}.category{color:#098679;font-size:.75rem;text-transform:uppercase;letter-spacing:.09em;font-weight:800}.card h3{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.03rem;line-height:1.35;margin:9px 0 6px}.desc{color:#647982;font-size:.85rem;line-height:1.45;margin:0 0 16px;min-height:37px}.price{font-size:1.46rem;font-weight:800;letter-spacing:-.045em;margin-top:auto}.seller{border-top:1px solid #e9efed;padding-top:12px;margin-top:13px;color:#536d76;font-size:.82rem;line-height:1.5}.seller strong{color:#173044}.contact{display:block;text-decoration:none;text-align:center;background:#e3f5f0;color:#087666;border-radius:9px;font-size:.9rem;font-weight:800;padding:11px;margin-top:13px}.contact:hover{background:#c8eadf}.purchase-btn{width:100%;border:1px solid #c5dcd6;border-radius:9px;background:white;color:#136f62;padding:10px;margin-top:8px;font-weight:700}.purchase-btn:disabled{color:#65827b;background:#edf5f2;cursor:default}.seller-login{font-size:.79rem;color:#527179;margin-top:7px}.example{font-size:.72rem;color:#72878c;margin-top:8px}.empty{grid-column:1/-1;background:white;border:1px dashed #bbceca;padding:40px;text-align:center;border-radius:15px;color:#647983}footer{border-top:1px solid #dce6e3;padding:24px;text-align:center;color:#61767d;font-size:.85rem;line-height:1.8}footer a{color:#087d6e}dialog{border:0;border-radius:20px;padding:0;max-width:min(680px,calc(100vw - 22px));width:100%;max-height:92vh;box-shadow:0 25px 90px #001b2b77}dialog::backdrop{background:#0e2a3d99}.modal-head{background:#12353d;color:#fff;padding:22px 26px;display:flex;justify-content:space-between;align-items:center}.modal-head h2{font-size:1.35rem}.close{border:0;background:transparent;color:white;font-size:1.9rem;line-height:1}.form{padding:23px 26px;overflow:auto;max-height:calc(92vh - 75px);display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px;font-size:.87rem;font-weight:700}.wide{grid-column:1/-1}.form textarea{resize:vertical;min-height:80px}.fine{font-size:.78rem;color:#607681;font-weight:400}.form .primary{grid-column:1/-1}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#12353d;color:white;padding:12px 18px;border-radius:10px;display:none;z-index:4}@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:750px){.grid{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:1fr 1fr}.controls input{grid-column:1/-1}.intro{padding:29px;display:block}.notice{margin-top:22px;max-width:none}.top{padding:14px 18px}.pill{display:none}.wrap{padding:18px 16px 48px}}@media(max-width:490px){.grid{grid-template-columns:1fr}.photo{height:225px}.controls{grid-template-columns:1fr}.controls input{grid-column:auto}.form{grid-template-columns:1fr;padding:17px}.wide,.form .primary{grid-column:auto}.top .primary{padding:11px 12px;font-size:.84rem}.brand{font-size:1.24rem}.brand svg{width:36px;height:36px}.intro{padding:27px 22px}.intro h1 br{display:none}}
+.header-actions{display:flex;align-items:center;gap:10px}.account-btn{background:#e6f3ef;border:0;color:#126b61;border-radius:11px;padding:12px 16px;font-weight:800;white-space:nowrap}.account-btn:hover{background:#d0e9e1}.auth-body{padding:24px 26px}.auth-body p{color:#567078;font-size:.94rem;line-height:1.5}.auth-body .field{margin:16px 0}.auth-body .primary{width:100%}.auth-body .secondary{width:100%;margin-top:10px;background:#e7f5f0;color:#126b61;border:0;border-radius:11px;padding:13px;font-weight:800}.auth-result{margin-top:14px;font-size:.91rem;line-height:1.5;min-height:1.4em}.auth-result.error{color:#a02d33}.auth-result.success{color:#087666}.config-alert{background:#fff3db;color:#78550b;border:1px solid #efdda7;padding:11px;border-radius:9px;font-size:.85rem}.auth-detail{font-size:.8rem;color:#607681;margin-top:11px}@media(max-width:590px){.header-actions{gap:6px}.account-btn{padding:10px;font-size:.79rem}.top .primary{padding:10px;font-size:.79rem}}
+.profile-body{padding:24px 26px;max-height:calc(92vh - 75px);overflow:auto}.profile-identity{background:#eef7f4;border-radius:14px;padding:18px;line-height:1.5;overflow-wrap:anywhere}.profile-identity strong{display:block;font-size:1.15rem}.profile-identity span{color:#526d74}.profile-section{margin-top:24px}.profile-section h3{font-size:1.07rem;margin:0 0 10px;color:#173044}.profile-note{font-size:.85rem;line-height:1.45;color:#526d74}.profile-row{border:1px solid #dce9e6;border-radius:12px;padding:14px;margin:9px 0;display:flex;align-items:center;justify-content:space-between;gap:14px}.profile-row strong{display:block;color:#15363e}.profile-row small{display:block;margin-top:5px;color:#5a737c}.profile-actions{display:flex;flex-wrap:wrap;gap:8px}.profile-row button{border:0;color:#0d7466;background:#e6f5f0;border-radius:8px;padding:8px;font-size:.8rem;font-weight:700}.profile-signout{width:100%;background:transparent;border:1px solid #b9cbc7;color:#41616a;border-radius:9px;padding:11px;margin-top:22px}@media(max-width:490px){.profile-row{align-items:flex-start;flex-direction:column}.profile-body{padding:18px}}.profile-city{display:flex;align-items:end;gap:10px;margin-top:16px}.profile-city .field{flex:1}.profile-city select{min-height:42px;padding:8px;border:1px solid #c6d9d5;border-radius:9px;background:#fff}.profile-city-save{background:#137e71;color:white;border:0;border-radius:9px;padding:11px 14px;font-weight:700}.sale-body{padding:26px;display:grid;gap:12px}.sale-body p{margin:0;line-height:1.5;color:#476570}.sale-body input{padding:11px;border:1px solid #bfd3d0;border-radius:9px}.sale-body .primary{white-space:normal}.publish-success{padding:26px;line-height:1.5}.publish-success .primary{width:100%;margin-top:12px}@media(max-width:490px){.profile-city{flex-direction:column;align-items:stretch}}.more-menu{position:relative}.more-btn{font-size:1.45rem;line-height:1;padding:7px 12px}.more-dropdown{position:absolute;right:0;top:calc(100% + 8px);z-index:1000;width:220px;background:#fff;border:1px solid #dce9e6;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.14);padding:7px}.more-dropdown button{display:flex;width:100%;align-items:center;gap:8px;border:0;background:transparent;border-radius:9px;padding:11px 12px;text-align:left;font-weight:700;color:#173b43;cursor:pointer}.more-dropdown button:hover{background:#eef7f4}.more-dropdown #notificationBadge{margin-left:auto}.more-dropdown #notificationBadge:not([hidden]){display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:#d34b4b;color:#fff;font-size:.7rem}.notify-btn{position:relative}.notify-btn span{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:#d34b4b;color:#fff;font-size:.7rem;margin-left:4px}.alerts-body,.notifications-body{padding:22px 26px;max-height:calc(92vh - 75px);overflow:auto}.alert-create{background:#eef7f4;border:1px solid #d6e8e3;border-radius:14px;padding:16px;margin-bottom:18px}.alert-create h3{margin:0 0 12px}.alert-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:10px}.alert-grid .wide{grid-column:1/-1}.alert-list{display:grid;gap:9px}.alert-item,.notification-item{border:1px solid #dce9e6;border-radius:12px;padding:14px}.alert-item{display:flex;align-items:center;justify-content:space-between;gap:14px}.alert-item strong,.notification-item strong{display:block;color:#15363e}.alert-item small,.notification-item small{display:block;color:#5a737c;margin-top:5px;line-height:1.4}.alert-actions{display:flex;gap:7px;flex-wrap:wrap}.alert-actions button,.notification-item button{border:0;color:#0d7466;background:#e6f5f0;border-radius:8px;padding:8px;font-size:.8rem;font-weight:700}.notification-item.unread{background:#eef7f4;border-color:#a9d7cd}.notification-head{display:flex;justify-content:space-between;gap:12px}.notifications-actions{display:flex;justify-content:flex-end;margin-bottom:12px}.notifications-actions button{border:0;background:transparent;color:#087666;font-weight:800}.no-items{color:#607681;font-size:.9rem;padding:15px 0}@media(max-width:590px){.alert-grid{grid-template-columns:1fr}.alert-item{align-items:flex-start;flex-direction:column}.alerts-body,.notifications-body{padding:18px}}[hidden]{display:none!important}.auth-link{border:0;background:transparent;color:#087666;text-decoration:underline;font-weight:800;padding:10px;cursor:pointer;width:100%}.auth-link:hover{color:#074c44}.auth-body .secondary:disabled,.auth-body .primary:disabled{opacity:.55;cursor:wait}.detail-back{background:none;border:0;padding:8px 0;margin:2px 0 18px;color:#087666;font-weight:800}.detail-title{font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.2;margin:0 0 20px}.detail-product{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);gap:24px;align-items:start}.detail-product>.card{max-width:none}.detail-product .photo{height:clamp(260px,36vw,420px)}.detail-product .content{padding:24px}.detail-product .card h3{font-size:1.4rem}.detail-product .desc{font-size:1rem;min-height:0;line-height:1.65}.detail-info{background:#fff;border:1px solid #e1e9e7;border-radius:17px;padding:24px;line-height:1.65;color:#47636c}.detail-info h3{margin:0 0 12px;color:#173044}.detail-info p{margin:8px 0}.related-head{margin-top:36px}.detail-empty{margin:16px 0}@media(max-width:750px){.detail-product{grid-template-columns:1fr}.detail-product .photo{height:280px}}[hidden]{display:none!important}</style></head><body><header class="top"><div class="brand"><svg viewBox="0 0 64 64" role="img" aria-label="Logo da UniTroca: chapéu de formatura" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="16" fill="#137e71"/><path d="M8 27 32 16l24 11-24 11L8 27Z" fill="#fff"/><path d="M19 34v10c8 7 18 7 26 0V34l-13 6-13-6Z" fill="#bcece0"/><path d="M54 29v13" stroke="#fff" stroke-width="3" stroke-linecap="round"/><circle cx="54" cy="45" r="3.5" fill="#f8d477"/></svg><div>uni<span>troca</span></div></div><div class="pill">Comunidade UNIFEI • Itabira e Itajubá</div><div class="header-actions">
+<button class="account-btn" id="accountButton" type="button">Entrar</button>
+<div class="more-menu">
+<button class="account-btn more-btn" id="moreMenuButton" type="button" aria-label="Mais opções">⋮</button>
+<div class="more-dropdown" id="moreDropdown" hidden>
+<button type="button" id="menuAlerts">🔎 Alertas de compra</button>
+<button type="button" id="menuNotifications">🔔 Notificações <span id="notificationBadge" hidden>0</span></button>
+<button type="button" id="menuProfile">👤 Meu perfil</button>
+</div>
+</div>
+<button class="primary" id="openForm">+ Vender produto</button>
+</div></header><main class="wrap" id="feedPage"><div class="intro"><div><div class="eyebrow">Compra e venda entre universitários</div><h1>O que você não usa mais<br>pode ajudar alguém a começar.</h1><p>Produtos de estudantes e ex-alunos nos dois campi da UNIFEI.</p></div><div class="notice"><strong>📍 UNIFEI · dois campi</strong><br>Veja a cidade de cada anúncio e combine a entrega diretamente com o vendedor.</div></div><section class="controls" aria-label="Filtros de anúncios"><input id="search" type="search" placeholder="Buscar calculadora, livro, mochila..." aria-label="Buscar anúncios"><select id="category" aria-label="Categoria"><option value="">Todas as categorias</option><option>Calculadoras</option><option>Livros</option><option>Eletrônicos</option><option>Materiais</option><option>Móveis</option><option>Acessórios</option></select><select id="condition" aria-label="Estado"><option value="">Qualquer estado</option><option>Novo</option><option>Seminovo</option><option>Usado</option></select><select id="city" aria-label="Cidade"><option value="">As duas cidades</option><option>Itabira</option><option>Itajubá</option></select><select id="sort" aria-label="Ordenação"><option value="recent">Mais recentes</option><option value="low">Menor preço</option><option value="high">Maior preço</option></select></section><div class="section-head"><h2>Anúncios da comunidade UNIFEI</h2><span class="count" id="count"></span></div><section class="grid" id="grid" aria-live="polite"></section></main><main class="wrap" id="detailPage" hidden><button class="detail-back" id="detailBack" type="button">← Voltar aos anúncios</button><h1 class="detail-title" id="detailTitle">Produto</h1><div id="detailProduct" class="detail-product"></div><div class="section-head related-head"><h2 id="relatedTitle">Anúncios parecidos</h2></div><section class="grid" id="relatedGrid" aria-live="polite"></section></main><footer>UniTroca é um projeto independente para a comunidade UNIFEI em Itabira e Itajubá, sem vínculo oficial com a universidade.<br>A plataforma não intermedeia pagamentos nem se responsabiliza por negociações. Os anúncios iniciais são demonstrações, com contatos fictícios. Os contatos de anúncios reais são visíveis para usuários UNIFEI com e-mail confirmado.</footer><dialog id="alertsDialog">
+<div class="modal-head"><h2>Meus alertas</h2><button class="close" type="button" id="closeAlerts" aria-label="Fechar alertas">×</button></div>
+<div class="alerts-body">
+<form id="alertForm" class="alert-create">
+<h3>🔎 Criar novo alerta</h3>
+<div class="alert-grid">
+<label class="field wide">O que você procura?<input name="termo" maxlength="100" required placeholder="Ex.: calculadora HP, livro de cálculo"></label>
+<label class="field">Categoria<select name="category"><option value="">Qualquer categoria</option><option>Calculadoras</option><option>Livros</option><option>Eletrônicos</option><option>Materiais</option><option>Móveis</option><option>Acessórios</option></select></label>
+<label class="field">Preço mínimo<input name="min_price" type="number" min="0" step="0.01" placeholder="0"></label>
+<label class="field">Preço máximo<input name="max_price" type="number" min="0" step="0.01" placeholder="Sem limite"></label>
+<label class="field">Cidade<select name="city"><option value="">Qualquer cidade</option><option>Itabira</option><option>Itajubá</option></select></label>
+<button class="primary wide" type="submit">Criar alerta</button>
+</div>
+<div id="alertFormStatus" class="auth-result" role="status"></div>
+</form>
+<section><h3>Alertas salvos</h3><div id="alertsList" class="alert-list"></div></section>
+</div>
+</dialog>
+
+<dialog id="notificationsDialog">
+<div class="modal-head"><h2>Notificações</h2><button class="close" type="button" id="closeNotifications" aria-label="Fechar notificações">×</button></div>
+<div class="notifications-body">
+<div class="notifications-actions"><button id="markAllNotifications" type="button">Marcar todas como lidas</button></div>
+<div id="notificationsList" class="alert-list"></div>
+</div>
+</dialog>
+
+<dialog id="authDialog"><div class="modal-head"><h2 id="authTitle">Entrar na UniTroca</h2><button class="close" type="button" id="closeAuth" aria-label="Fechar">×</button></div><div class="auth-body"><div class="config-alert" id="configAlert" hidden>O envio de e-mails ainda não foi conectado. É necessário configurar o serviço de autenticação para ativar o cadastro.</div><section id="loginPanel"><p>Use sua conta com e-mail institucional da UNIFEI.</p><form id="authForm"><label class="field">E-mail institucional<input name="email" type="email" autocomplete="email" required placeholder="seu.nome@unifei.edu.br"></label><label class="field">Senha<input name="password" type="password" autocomplete="current-password" required></label><button class="primary" type="submit">Entrar</button></form><button class="auth-link" id="showRegister" type="button">Ainda não tenho conta · Criar conta</button></section><section id="registerPanel" hidden><p>Preencha seus dados. Enviaremos um link ao seu e-mail <strong>@unifei.edu.br</strong> para confirmar o cadastro.</p><form id="registerForm"><label class="field">Nome completo<input name="name" autocomplete="name" maxlength="80" required></label><label class="field">E-mail institucional<input name="email" type="email" autocomplete="email" required placeholder="seu.nome@unifei.edu.br"></label><label class="field">Cidade / campus<select name="city" required><option value="">Selecione</option><option>Itabira</option><option>Itajubá</option></select></label><label class="field">Crie uma senha<input name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="No mínimo 8 caracteres"></label><label class="field">Confirme a senha<input name="confirm" type="password" autocomplete="new-password" minlength="8" required></label><button class="primary" type="submit">Criar conta e enviar link</button></form><button class="secondary" id="resendConfirm" type="button">Reenviar e-mail de confirmação</button><button class="auth-link" id="showLogin" type="button">Já tenho conta · Entrar</button></section><div id="authResult" class="auth-result" role="status" aria-live="polite"></div><p class="auth-detail">O e-mail institucional confirma o endereço, mas não comprova o vínculo com um campus específico.</p></div></dialog><dialog id="profileDialog"><div class="modal-head"><h2>Meu perfil</h2><button class="close" type="button" id="closeProfile" aria-label="Fechar perfil">×</button></div><div class="profile-body"><div id="profileIdentity" class="profile-identity"></div><form id="profileCityForm" class="profile-city"><label class="field">Minha cidade / campus<select name="city" required><option value="">Selecione</option><option>Itabira</option><option>Itajubá</option></select></label><button type="submit" class="profile-city-save">Salvar cidade</button></form><div id="profileCityStatus" class="profile-note" role="status"></div><section class="profile-section"><h3>Meus anúncios</h3><div id="profileAds" aria-live="polite"></div></section><section class="profile-section"><h3>Minhas compras</h3><p class="profile-note">Depois de combinar e concluir uma compra pelo contato do anúncio, marque-a no site para guardar seu histórico. O vendedor não recebe um pagamento por aqui.</p><div id="profilePurchases" aria-live="polite"></div></section><button id="profileSignout" class="profile-signout" type="button">Sair da conta</button></div></dialog><dialog id="dialog"><div class="modal-head"><h2>Publicar produto</h2><button class="close" type="button" id="closeForm" aria-label="Fechar">×</button></div><form id="productForm" class="form"><label class="field wide">Nome do produto<input name="title" maxlength="80" required placeholder="Ex.: Calculadora científica"></label><label class="field">Categoria<select name="category" required><option value="">Selecione</option><option>Calculadoras</option><option>Livros</option><option>Eletrônicos</option><option>Materiais</option><option>Móveis</option><option>Acessórios</option></select></label><label class="field">Preço (R$)<input name="price" type="number" min="0" max="999999" step="0.01" required placeholder="120,00"></label><label class="field">Estado<select name="condition" required><option value="">Selecione</option><option>Novo</option><option>Seminovo</option><option>Usado</option></select></label><label class="field">Nome do vendedor<input name="seller" maxlength="60" required></label><label class="field">Curso ou vínculo com a UNIFEI<input name="course" maxlength="70" required placeholder="Ex.: Engenharia de Produção, ex-aluno"></label><label class="field">Cidade do anúncio<select name="city" required><option value="">Selecione</option><option>Itabira</option><option>Itajubá</option></select></label><label class="field">WhatsApp com DDD<input name="phone" inputmode="tel" type="tel" pattern="[0-9 ()+\-]{10,20}" required placeholder="(31) 99999-9999"></label><label class="field wide">E-mail para contato (opcional)<input name="email" type="email" maxlength="120"></label><label class="field wide">Foto do produto <span class="fine">Opcional. JPG, PNG ou WebP até 1 MB. A imagem será enviada para o anúncio.</span><input name="photo" type="file" accept="image/jpeg,image/png,image/webp"></label><label class="field wide">Descrição<input name="description" maxlength="180" required placeholder="Detalhes, conservação e itens incluídos"></label><div class="fine wide">Publicação disponível após confirmação do e-mail institucional. Indique a cidade do produto. O anúncio aparece para todos, com seu identificador institucional (antes do @). Seu contato só fica visível a usuários UNIFEI com e-mail confirmado. Veja seus anúncios em Meu perfil.</div><button class="primary" type="submit">Publicar anúncio</button></form></dialog><dialog id="saleDialog"><div class="modal-head"><h2>Concluir venda</h2><button class="close" type="button" id="closeSale" aria-label="Fechar venda">×</button></div><form id="saleForm" class="sale-body"><p id="saleProduct"></p><p>Informe o e-mail do comprador, de qualquer domínio. O anúncio sairá do feed. Se o comprador tiver uma conta confirmada na UniTroca, a venda também aparecerá em <strong>Minhas compras</strong> no perfil dele.</p><label class="field">E-mail do comprador<input name="buyer" type="email" maxlength="254" required placeholder="comprador@exemplo.com"></label><button class="primary" type="submit">Confirmar venda e retirar anúncio</button><div id="saleError" class="auth-result error" role="alert"></div></form></dialog><dialog id="publishSuccessDialog"><div class="modal-head"><h2>Anúncio publicado!</h2><button class="close" type="button" id="closePublishSuccess" aria-label="Fechar confirmação">×</button></div><div class="publish-success"><p id="publishSuccessText"></p><button class="primary" id="viewPublished" type="button">Ver no feed</button></div></dialog><div id="toast" class="toast" role="status"></div><script>
+const icons={Calculadoras:'🧮',Livros:'📚',Eletrônicos:'💻',Materiais:'📐',Móveis:'🪑',Acessórios:'🎒'};
+const photos={};
+const samples=[['Calculadora científica fx-991EX','Calculadoras',125,'Seminovo'],['Livro de Cálculo I','Livros',55,'Usado'],['Notebook para estudos','Eletrônicos',1450,'Usado'],['Mochila universitária','Acessórios',70,'Seminovo'],['Kit de desenho técnico','Materiais',85,'Seminovo'],['Mesa de estudo compacta','Móveis',180,'Usado'],['Calculadora financeira','Calculadoras',95,'Seminovo'],['Livro de Física básica','Livros',48,'Usado'],['Monitor 24 polegadas','Eletrônicos',450,'Seminovo'],['Caderno universitário','Materiais',22,'Novo'],['Luminária de mesa','Móveis',65,'Seminovo'],['Bolsa para notebook','Acessórios',45,'Usado'],['Calculadora gráfica','Calculadoras',390,'Usado'],['Livro de Álgebra Linear','Livros',62,'Seminovo'],['Teclado sem fio','Eletrônicos',80,'Seminovo'],['Régua T e esquadros','Materiais',35,'Usado'],['Cadeira de escritório','Móveis',220,'Usado'],['Garrafa térmica','Acessórios',38,'Seminovo'],['Livro de Química Geral','Livros',59,'Usado'],['Fone de ouvido','Eletrônicos',90,'Seminovo'],['Kit de laboratório','Materiais',110,'Seminovo'],['Estante para livros','Móveis',160,'Usado'],['Calculadora científica básica','Calculadoras',65,'Usado'],['Estojo e materiais','Acessórios',25,'Novo']].map((v,i)=>({id:'demo-'+i,title:v[0],category:v[1],price:v[2],condition:v[3],seller:['Ana (exemplo)','Carlos (exemplo)','Marina (exemplo)','Rafael (exemplo)'][i%4],course:'UNIFEI',city:i%2?'Itajubá':'Itabira',phone:'',email:'',description:'Anúncio demonstrativo. Cadastre um produto para publicar um anúncio real.',photo:photos[v[1]]||'',demo:true,created:0}));
+let own=[];
+let contacts=new Map();
+let purchases=new Map();
+let myAds=[];
+let profileError="";
+let publishedId=null;
+let feedError='';
+const $=id=>document.getElementById(id);
+const money=n=>Number(n).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+function el(tag,cls,content){const e=document.createElement(tag);if(cls)e.className=cls;if(content!==undefined)e.textContent=content;return e}
+function showToast(message){$('toast').textContent=message;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',4500)}
+let alertsData=[];
+let notificationsData=[];
+
+function showAlertsUI(){
+  if(!loginSession){authMode('login');$('authDialog').showModal();return}
+  if(!requireAuth().then(ok=>{if(ok){loadAlerts();$('alertsDialog').showModal()}})){}
+}
+
+async function loadAlerts(){
+  if(!loginSession)return;
+  try{
+    const rows=await dataRequest('/rest/v1/unitroca_alertas?select=id,termo,category,min_price,max_price,city,active,created_at&order=created_at.desc&limit=100');
+    alertsData=Array.isArray(rows)?rows:[];
+    renderAlerts();
+  }catch(err){
+    $('alertsList').replaceChildren(el('p','no-items','Não foi possível carregar seus alertas.'));
+    console.error('Alertas:',err);
+  }
+}
+
+function renderAlerts(){
+  const list=$('alertsList');list.replaceChildren();
+  if(!alertsData.length){list.append(el('p','no-items','Você ainda não criou nenhum alerta.'));return}
+  for(const a of alertsData){
+    const row=el('div','alert-item');
+    const info=el('div');
+    const filters=[
+      a.category||'qualquer categoria',
+      a.city||'qualquer cidade',
+      a.min_price!=null?'a partir de '+money(a.min_price):'sem preço mínimo',
+      a.max_price!=null?'até '+money(a.max_price):'sem preço máximo'
+    ];
+    info.append(el('strong','',a.termo),el('small','',(a.active?'Ativo':'Pausado')+' · '+filters.join(' · ')));
+    const actions=el('div','alert-actions');
+    const toggle=el('button','',a.active?'Pausar':'Ativar');toggle.type='button';
+    toggle.onclick=async()=>{
+      toggle.disabled=true;
+      try{await dataRequest('/rest/v1/rpc/unitroca_alterar_alerta',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({p_alerta_id:a.id,p_active:!a.active})});await loadAlerts()}
+      catch(err){showToast('Não foi possível alterar o alerta: '+err.message);toggle.disabled=false}
+    };
+    const del=el('button','','Excluir');del.type='button';
+    del.onclick=async()=>{
+      if(!confirm('Excluir este alerta?'))return;
+      del.disabled=true;
+      try{await dataRequest('/rest/v1/rpc/unitroca_excluir_alerta',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({p_alerta_id:a.id})});await loadAlerts()}
+      catch(err){showToast('Não foi possível excluir o alerta: '+err.message);del.disabled=false}
+    };
+    actions.append(toggle,del);row.append(info,actions);list.append(row);
+  }
+}
+
+async function loadNotifications(){
+  if(!loginSession)return;
+  try{
+    const rows=await dataRequest('/rest/v1/unitroca_notificacoes?select=id,tipo,titulo,mensagem,listing_id,lida,created_at&order=created_at.desc&limit=100');
+    notificationsData=Array.isArray(rows)?rows:[];
+    renderNotifications();
+    updateNotificationBadge();
+  }catch(err){
+    $('notificationsList').replaceChildren(el('p','no-items','Não foi possível carregar suas notificações.'));
+    console.error('Notificações:',err);
+  }
+}
+
+function updateNotificationBadge(){
+  const unread=notificationsData.filter(n=>!n.lida).length;
+  $('notificationBadge').textContent=unread>99?'99+':String(unread);
+  $('notificationBadge').hidden=unread===0;
+}
+
+function renderNotifications(){
+  const list=$('notificationsList');list.replaceChildren();
+  if(!notificationsData.length){list.append(el('p','no-items','Você não tem notificações.'));return}
+  for(const n of notificationsData){
+    const row=el('div','notification-item'+(n.lida?'':' unread'));
+    const head=el('div','notification-head');
+    const info=el('div');
+    info.append(el('strong','',n.titulo),el('small','',n.mensagem),el('small','',new Date(n.created_at).toLocaleString('pt-BR')));
+    head.append(info);
+    if(!n.lida){
+      const button=el('button','','Marcar como lida');button.type='button';
+      button.onclick=async()=>{
+        button.disabled=true;
+        try{
+          await dataRequest('/rest/v1/rpc/unitroca_marcar_notificacao_lida',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({p_notificacao_id:n.id})});
+          n.lida=true;renderNotifications();updateNotificationBadge();
+        }catch(err){button.disabled=false;showToast('Não foi possível marcar como lida: '+err.message)}
+      };
+      head.append(button);
+    }
+    if(n.listing_id){
+      row.style.cursor='pointer';
+      row.onclick=async e=>{
+        if(e.target.tagName==='BUTTON')return;
+        try{await openListing(n.listing_id);$('notificationsDialog').close()}catch(err){}
+      };
+    }
+    row.append(head);list.append(row);
+  }
+}
+
+async function createAlert(form){
+  const fd=new FormData(form);
+  const termo=String(fd.get('termo')||'').trim();
+  const category=String(fd.get('category')||'')||null;
+  const city=String(fd.get('city')||'')||null;
+  const minRaw=String(fd.get('min_price')||'').trim();
+  const maxRaw=String(fd.get('max_price')||'').trim();
+  const min_price=minRaw===''?null:Number(minRaw);
+  const max_price=maxRaw===''?null:Number(maxRaw);
+  if(termo.length<2){$('alertFormStatus').textContent='Digite pelo menos 2 caracteres.';$('alertFormStatus').className='auth-result error';return}
+  if((min_price!==null&&!Number.isFinite(min_price))||(max_price!==null&&!Number.isFinite(max_price))){$('alertFormStatus').textContent='Confira os preços.';$('alertFormStatus').className='auth-result error';return}
+  const button=form.querySelector('[type="submit"]');button.disabled=true;button.textContent='Criando...';$('alertFormStatus').textContent='';
+  try{
+    await dataRequest('/rest/v1/rpc/unitroca_criar_alerta',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({p_termo:termo,p_category:category,p_min_price:min_price,p_max_price:max_price,p_city:city})});
+    form.reset();$('alertFormStatus').textContent='Alerta criado! Você receberá uma notificação quando aparecer um anúncio compatível.';$('alertFormStatus').className='auth-result success';await loadAlerts();
+  }catch(err){$('alertFormStatus').textContent='Não foi possível criar o alerta: '+err.message;$('alertFormStatus').className='auth-result error'}
+  finally{button.disabled=false;button.textContent='Criar alerta'}
+}
+
+$('moreMenuButton').onclick=()=>{
+  const menu=$('moreDropdown');
+  menu.hidden=!menu.hidden;
+};
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.more-menu'))$('moreDropdown').hidden=true;
+});
+$('menuAlerts').onclick=()=>{ $('moreDropdown').hidden=true; showAlertsUI(); };
+$('menuNotifications').onclick=async()=>{
+  $('moreDropdown').hidden=true;
+  if(await requireAuth()){await loadNotifications();$('notificationsDialog').showModal()}
+  else{authMode('login');$('authDialog').showModal()}
+};
+$('menuProfile').onclick=async()=>{
+  $('moreDropdown').hidden=true;
+  if(await requireAuth()){renderProfile();$('profileDialog').showModal();loadProfileData()}
+  else{authMode('login');$('authDialog').showModal()}
+};
+$('closeAlerts').onclick=()=>$('alertsDialog').close();
+$('closeNotifications').onclick=()=>$('notificationsDialog').close();
+$('alertForm').addEventListener('submit',e=>{e.preventDefault();createAlert(e.currentTarget)});
+$('markAllNotifications').onclick=async()=>{
+  try{await dataRequest('/rest/v1/rpc/unitroca_marcar_todas_notificacoes_lidas',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});notificationsData.forEach(n=>n.lida=true);renderNotifications();updateNotificationBadge()}
+  catch(err){showToast('Não foi possível marcar as notificações: '+err.message)}
+};
+
+async function loadUserAlertsAndNotifications(){
+  if(!loginSession)return;
+  await Promise.all([loadAlerts(),loadNotifications()]);
+}
+
+setInterval(()=>{if(loginSession){loadNotifications()}},30000);
+
+function render(){
+  const query=$('search').value.toLocaleLowerCase('pt-BR').trim(),cat=$('category').value,condition=$('condition').value,city=$('city').value;
+  let data=[...own,...samples].filter(p=>(!cat||p.category===cat)&&(!condition||p.condition===condition)&&(!city||p.city===city)&&(!query||[p.title,p.description,p.category].join(' ').toLocaleLowerCase('pt-BR').includes(query)));
+  if($('sort').value==='low')data.sort((a,b)=>a.price-b.price);
+  if($('sort').value==='high')data.sort((a,b)=>b.price-a.price);
+  $('count').textContent=data.length+' anúncio'+(data.length===1?'':'s');
+  const grid=$('grid');grid.replaceChildren();
+  if(feedError)grid.append(el('div','empty',feedError));
+  if(!data.length){if(!feedError)grid.append(el('div','empty','Nenhum anúncio encontrado. Experimente mudar os filtros.'));renderDetail();return}
+  for(const p of data)grid.append(createCard(p));
+  renderDetail()
+}
+function listingHref(id){const url=new URL(location.href);url.searchParams.set('anuncio',id);return url.pathname+url.search}
+function createCard(p){
+    const card=el('article','card'),image=el('div','photo');
+    if(p.photo){const img=el('img');img.src=p.photo;img.alt=p.demo?'Foto ilustrativa da categoria '+p.category:'Foto de '+p.title;img.loading='lazy';img.onerror=()=>image.replaceChildren(el('div','fallback',icons[p.category]||'📦'));image.append(img)}
+    else image.append(el('div','fallback',icons[p.category]||'📦'));
+    image.append(el('span','badge',p.condition));card.append(image);
+    const body=el('div','content');const title=el('a','listing-title',p.title);title.href=listingHref(p.id);title.onclick=e=>{e.preventDefault();openListing(p.id)};const heading=el('h3');heading.append(title);body.append(el('div','category',p.category),heading,el('p','desc',p.description),el('div','price',money(p.price)));
+    const seller=el('div','seller');seller.append(el('strong','',p.seller),document.createTextNode(' · '+p.course+' · '+(p.city||'Itabira')+', MG'));body.append(seller);if(!p.demo)body.append(el('div','seller-login','Conta UNIFEI: '+(p.seller_login||'não informada')));
+    if(p.demo)body.append(el('div','example','Anúncio demonstrativo · contato fictício'));
+    else {
+      if(loginSession?.user?.id===p.owner_id)body.append(el('div','example','Seu anúncio · veja em Meu perfil'));
+      const contact=contacts.get(p.id);
+      if(contact){
+        const a=el('a','contact','Conversar no WhatsApp');a.href='https://wa.me/55'+contact.phone+'?text='+encodeURIComponent('Olá! Vi seu anúncio de '+p.title+' na UniTroca. Ainda está disponível?');a.target='_blank';a.rel='noopener noreferrer';body.append(a);
+        if(contact.email){const mail=el('a','contact','Enviar e-mail');mail.href='mailto:'+encodeURIComponent(contact.email)+'?subject='+encodeURIComponent('UniTroca: '+p.title);body.append(mail)}
+        if(loginSession?.user?.id!==p.owner_id){const bought=purchases.has(p.id);const buy=el('button','purchase-btn',bought?'Compra registrada':'Registrar esta compra');buy.type='button';buy.disabled=bought;buy.onclick=()=>registerPurchase(p);body.append(buy)}
+      }else{
+        const button=el('button','contact',loginSession?'Atualizar contato':'Entrar para ver o contato');button.type='button';button.onclick=async()=>{
+          if(await requireAuth()){await loadContacts();render()}
+          else{authMode('login');$('authDialog').showModal()}
+        };body.append(button)
+      }
+    }
+    card.dataset.listingId=p.id;card.append(body);card.tabIndex=0;card.setAttribute('aria-label','Ver anúncio: '+p.title);card.addEventListener('click',e=>{if(!e.target.closest('a,button'))openListing(p.id)});card.addEventListener('keydown',e=>{if(e.target===card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openListing(p.id)}});return card
+}
+function openListing(id){history.pushState(null,'',listingHref(id));renderDetail();window.scrollTo({top:0,behavior:'smooth'})}
+function returnToFeed(){const url=new URL(location.href);url.searchParams.delete('anuncio');history.pushState(null,'',url.pathname+url.search);document.title='UniTroca | UNIFEI Itabira';renderDetail();window.scrollTo({top:0,behavior:'smooth'})}
+function renderDetail(){
+  const id=new URL(location.href).searchParams.get('anuncio');$('feedPage').hidden=!!id;$('detailPage').hidden=!id;if(!id)return;
+  const product=[...own,...samples].find(p=>p.id===id),area=$('detailProduct'),related=$('relatedGrid');area.replaceChildren();related.replaceChildren();
+  if(!product){$('detailTitle').textContent='Anúncio não encontrado';area.append(el('div','empty',feedError||'Este anúncio pode ter sido removido pelo vendedor.'));$('relatedTitle').textContent='Outros anúncios';return}
+  $('detailTitle').textContent=product.title;document.title=product.title+' | UniTroca';
+  area.append(createCard(product));const info=el('aside','detail-info');info.append(el('h3','', 'Sobre este produto'),el('p','',product.description),el('p','','Estado: '+product.condition),el('p','','Categoria: '+product.category),el('p','','Cidade: '+(product.city||'Itabira')+', MG'));area.append(info);
+  const similar=[...own,...samples].filter(p=>p.id!==id&&p.category===product.category).slice(0,8);$('relatedTitle').textContent='Mais anúncios de '+product.category;
+  if(!similar.length){related.append(el('div','empty','Ainda não há outros anúncios nesta categoria.'));return}
+  similar.forEach(p=>related.append(createCard(p)))
+}
+$('detailBack').onclick=returnToFeed;window.addEventListener('popstate',()=>{renderDetail();if(!new URL(location.href).searchParams.has('anuncio'))document.title='UniTroca | UNIFEI Itabira'});
+['search','category','condition','city','sort'].forEach(id=>$(id).addEventListener(id==='search'?'input':'change',render));
+$('openForm').onclick=async()=>{if(await requireAuth()){$('productForm').elements.city.value=loginSession.user.user_metadata?.city||'';$('dialog').showModal()}else{authMode('login');$('authDialog').showModal()}};
+$('closeForm').onclick=()=>$('dialog').close();
+$('dialog').addEventListener('click',e=>{if(e.target===$('dialog'))$('dialog').close()});
+function photoUrl(path){return path?authUrl()+'/storage/v1/object/public/unitroca-fotos/'+path.split('/').map(encodeURIComponent).join('/'):''}
+async function dataRequest(path,options={}){
+  const response=await fetch(authUrl()+path,{...options,headers:{apikey:AUTH_PUBLISHABLE_KEY,...(loginSession?.access_token?{Authorization:'Bearer '+loginSession.access_token}:{}),...(options.headers||{})}});
+  const data=await response.json().catch(()=>({}));
+  if(!response.ok)throw Error(data.message||data.error||'Não foi possível acessar os anúncios. Confira a configuração do projeto.');
+  return data
+}
+async function loadListings(){
+  try{
+    let rows;try{rows=await dataRequest('/rest/v1/unitroca_anuncios?select=id,owner_id,title,category,price,condition,seller,course,description,city,seller_login,photo_path,created_at&order=created_at.desc&limit=100')}catch{rows=await dataRequest('/rest/v1/unitroca_anuncios?select=id,owner_id,title,category,price,condition,seller,course,description,photo_path,created_at&order=created_at.desc&limit=100')}
+    own=rows.map(p=>({...p,photo:photoUrl(p.photo_path),created:Date.parse(p.created_at)||0}));feedError='';
+  }catch(err){feedError='Não foi possível carregar os anúncios reais. Configure a tabela na Supabase e atualize a página.';console.error('Feed:',err)}
+  render()
+}
+async function loadContacts(){
+  if(!loginSession){contacts.clear();render();return}
+  try{const rows=await dataRequest('/rest/v1/unitroca_contatos?select=listing_id,phone,email');contacts=new Map(rows.map(p=>[p.listing_id,p]))}
+  catch(err){contacts.clear();console.error('Contatos:',err);showToast('Não foi possível carregar os contatos. Tente entrar novamente.')}
+  render()
+}
+async function publishProduct(form){
+  const fd=new FormData(form),file=fd.get('photo');
+  if(file&&file.size>1048576){alert('Escolha uma foto de até 1 MB.');return}
+  if(file&&file.size&&!['image/jpeg','image/png','image/webp'].includes(file.type)){alert('A foto deve ser JPG, PNG ou WebP.');return}
+  const p={p_title:String(fd.get('title')).trim(),p_category:String(fd.get('category')),p_price:Number(fd.get('price')),p_condition:String(fd.get('condition')),p_seller:String(fd.get('seller')).trim(),p_course:String(fd.get('course')).trim(),p_city:String(fd.get('city')),p_phone:String(fd.get('phone')).replace(/\D/g,''),p_email:String(fd.get('email')).trim(),p_description:String(fd.get('description')).trim(),p_photo_path:null};
+  if(!p.p_title||!p.p_seller||!p.p_course||!['Itabira','Itajubá'].includes(p.p_city)||!p.p_description||!/^\d{10,11}$/.test(p.p_phone)||!Number.isFinite(p.p_price)||p.p_price<0){alert('Confira os dados. O WhatsApp deve ter DDD e 10 ou 11 dígitos.');return}
+  const button=form.querySelector('[type="submit"]');button.disabled=true;button.textContent='Publicando...';
+  let uploadedPath=null;
+  try{
+    if(file&&file.size){
+      const ext={'image/jpeg':'jpg','image/png':'png','image/webp':'webp'}[file.type];
+      uploadedPath=loginSession.user.id+'/'+crypto.randomUUID()+'.'+ext;
+      const response=await fetch(authUrl()+'/storage/v1/object/unitroca-fotos/'+uploadedPath,{method:'POST',headers:{apikey:AUTH_PUBLISHABLE_KEY,Authorization:'Bearer '+loginSession.access_token,'Content-Type':file.type,'x-upsert':'false'},body:file});
+      if(!response.ok){const data=await response.json().catch(()=>({}));throw Error(data.message||data.error||'Não foi possível enviar a foto.')}
+      p.p_photo_path=uploadedPath
+    }
+    const newId=await dataRequest('/rest/v1/rpc/unitroca_publicar',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});
+    uploadedPath=null;form.reset();$('dialog').close();$('search').value='';$('category').value='';$('condition').value='';$('city').value='';$('sort').value='recent';
+    await loadListings();await loadContacts();await loadProfileData();window.scrollTo({top:0,behavior:'smooth'});$('publishSuccessText').textContent='“'+p.p_title+'” foi publicado em '+p.p_city+'. O anúncio já pode aparecer para outras pessoas no feed.';publishedId=newId;$('publishSuccessDialog').showModal()
+  }catch(err){
+    if(uploadedPath)fetch(authUrl()+'/storage/v1/object/unitroca-fotos/'+uploadedPath,{method:'DELETE',headers:{apikey:AUTH_PUBLISHABLE_KEY,Authorization:'Bearer '+loginSession.access_token}}).catch(()=>{});
+    alert('Não foi possível publicar: '+String(err.message||err))
+  }finally{button.disabled=false;button.textContent='Publicar anúncio'}
+}
+
+function renderProfile(){
+  if(!loginSession)return;
+  const u=loginSession.user;
+  const identity=$('profileIdentity');identity.replaceChildren(el('strong','',u.user_metadata?.display_name||u.email.split('@')[0]),el('span','',u.email),el('span','', 'Login: '+u.email.split('@')[0]));$('profileCityForm').elements.city.value=u.user_metadata?.city||'';
+  const ads=$('profileAds');ads.replaceChildren();
+  if(profileError)ads.append(el('p','profile-note',profileError));
+  if(!myAds.length)ads.append(el('p','profile-note','Você ainda não publicou anúncios.'));
+  for(const p of myAds){const row=el('div','profile-row');const info=el('div');info.append(el('strong','',p.title),el('small','',money(p.price)+' · '+(p.city||'Itabira')+' · '+new Date(p.created_at).toLocaleDateString('pt-BR')));row.append(info);const actions=el('div','profile-actions');const sold=el('button','','Venda concluída');sold.type='button';sold.onclick=()=>openSale(p);actions.append(sold);const del=el('button','','Excluir anúncio');del.type='button';del.onclick=()=>deleteListing(p,del);actions.append(del);row.append(actions);ads.append(row)}
+  const buys=$('profilePurchases');buys.replaceChildren();
+  if(profileError)buys.append(el('p','profile-note',profileError));
+  if(!purchases.size)buys.append(el('p','profile-note','Nenhuma compra registrada por você.'));
+  for(const p of purchases.values()){
+    const row=el('div','profile-row'),info=el('div');info.append(el('strong','',p.title),el('small','',money(p.price)+' · Vendedor: '+p.seller+' · '+new Date(p.created_at).toLocaleDateString('pt-BR')));row.append(info);
+    const undo=el('button','','Desfazer registro');undo.type='button';undo.onclick=async()=>{if(!confirm('Remover esta compra do seu histórico?'))return;undo.disabled=true;try{await dataRequest('/rest/v1/unitroca_compras?id=eq.'+encodeURIComponent(p.id),{method:'DELETE'});await loadProfileData()}catch(err){showToast('Não foi possível alterar a compra: '+err.message);undo.disabled=false}};row.append(undo);buys.append(row)
+  }
+}
+async function loadProfileData(){
+  if(!loginSession)return;
+  try{
+    const uid=loginSession.user.id;
+    const [adRows,buyRows]=await Promise.all([
+      dataRequest('/rest/v1/unitroca_anuncios?select=id,title,price,city,photo_path,created_at&owner_id=eq.'+encodeURIComponent(uid)+'&order=created_at.desc&limit=100'),
+      dataRequest('/rest/v1/unitroca_compras?select=id,listing_id,title,price,seller,created_at&order=created_at.desc&limit=100')
+    ]);
+    myAds=adRows;purchases=new Map(buyRows.map(p=>[p.listing_id||p.id,p]));profileError=''
+  }catch(err){profileError='Histórico indisponível. Execute o SQL de perfil e compras na Supabase.';console.error('Perfil:',err)}
+  renderProfile();render()
+}
+async function registerPurchase(p){
+  if(!await requireAuth()){authMode('login');$('authDialog').showModal();return}
+  if(!confirm('Você já combinou e concluiu a compra de “'+p.title+'”? Isso adicionará o produto ao seu histórico.'))return;
+  try{await dataRequest('/rest/v1/rpc/unitroca_registrar_compra',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({p_listing_id:p.id})});await loadProfileData();showToast('Compra registrada em Meu perfil.')}catch(err){showToast('Não foi possível registrar a compra: '+err.message)}
+}
+
+
+
+let saleListing=null;
+function openSale(p){saleListing=p;$('saleForm').reset();$('saleProduct').textContent='Produto: '+p.title;$('saleError').textContent='';$('saleDialog').showModal()}
+$('closeSale').onclick=()=>$('saleDialog').close();
+$('saleForm').addEventListener('submit',async e=>{
+  e.preventDefault();const form=e.currentTarget,buyer=String(new FormData(form).get('buyer')||'').trim().toLowerCase();
+  const listing=saleListing,button=form.querySelector('[type="submit"]');
+  if(!listing||!await requireAuth()){$('saleError').textContent='Entre novamente com sua conta institucional.';return}
+  button.disabled=true;button.textContent='Concluindo...';$('saleError').textContent='';
+  try{
+    const photo=await dataRequest('/rest/v1/rpc/unitroca_concluir_venda',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({p_listing_id:listing.id,p_buyer_email:buyer})});
+    if(photo)await removeListingPhoto(photo);
+    $('saleDialog').close();$('profileDialog').close();await loadListings();await loadProfileData();showToast('Venda concluída! Anúncio removido do feed.')
+  }catch(err){$('saleError').textContent='Não foi possível concluir: '+err.message}
+  finally{button.disabled=false;button.textContent='Confirmar venda e retirar anúncio'}
+});
+async function removeListingPhoto(path){
+  try{const response=await fetch(authUrl()+'/storage/v1/object/unitroca-fotos/'+path,{method:'DELETE',headers:{apikey:AUTH_PUBLISHABLE_KEY,Authorization:'Bearer '+loginSession.access_token}});if(!response.ok)console.error('Foto não removida:',await response.text())}
+  catch(err){console.error('Foto não removida:',err)}
+}
+
+async function deleteListing(p,button){
+  if(!await requireAuth()){authMode('login');$('authDialog').showModal();return}
+  if(p.owner_id&&p.owner_id!==loginSession.user.id)return;
+  if(!confirm('Excluir “'+p.title+'” do feed? Isso não pode ser desfeito.'))return;
+  button.disabled=true;
+  try{
+    const deleted=await dataRequest('/rest/v1/unitroca_anuncios?id=eq.'+encodeURIComponent(p.id)+'&select=id',{method:'DELETE',headers:{Prefer:'return=representation'}});
+    if(!Array.isArray(deleted)||deleted.length!==1)throw Error('Não foi possível excluir este anúncio. Confira se ele ainda pertence à sua conta.');
+    if(p.photo_path)await removeListingPhoto(p.photo_path)
+    await loadListings();await loadProfileData();showToast('Anúncio excluído do feed.')
+  }catch(err){showToast('Falha ao excluir: '+err.message);button.disabled=false}
+}
+$('profileCityForm').addEventListener('submit',async e=>{
+  e.preventDefault();const form=e.currentTarget,city=form.elements.city.value;
+  if(!['Itabira','Itajubá'].includes(city)||!await requireAuth())return;
+  const button=form.querySelector('button');button.disabled=true;
+  try{const response=await fetch(authUrl()+'/auth/v1/user',{method:'PUT',headers:{apikey:AUTH_PUBLISHABLE_KEY,Authorization:'Bearer '+loginSession.access_token,'Content-Type':'application/json'},body:JSON.stringify({data:{city}})});const user=await response.json();if(!response.ok)throw Error(user.message||'Não foi possível salvar sua cidade.');loginSession.user=user;sessionStorage.setItem('unitroca-auth-session',JSON.stringify(loginSession));$('profileCityStatus').textContent='Cidade salva no seu perfil.';renderProfile()}
+  catch(err){$('profileCityStatus').textContent=err.message}
+  finally{button.disabled=false}
+});
+$('closePublishSuccess').onclick=()=>$('publishSuccessDialog').close();
+$('viewPublished').onclick=()=>{$('publishSuccessDialog').close();render();const card=[...document.querySelectorAll('#grid .card')].find(x=>x.dataset.listingId===publishedId);card?.scrollIntoView({behavior:'smooth',block:'center'})};
+
+$('productForm').addEventListener('submit',async e=>{e.preventDefault();const form=e.currentTarget;if(!await requireAuth()){$('dialog').close();authMode('login');$('authDialog').showModal();return}await publishProduct(form)});
+// Configure uma chave publicável do projeto; nunca coloque uma chave secreta no HTML.
+const AUTH_URL='https://etayhvdhickaxcvgotvs.supabase.co'; // Ex.: https://seu-projeto.supabase.co
+const AUTH_PUBLISHABLE_KEY='sb_publishable_cDa2iQhPdHqZh8Zie9MH9g_Z5K7PCfL'; // Chave publicável (anon/publishable), nunca service_role.
+const configured=()=>/^https:\/\/[^/]+\.supabase\.co$/.test(AUTH_URL.replace(/\/$/,''))&&AUTH_PUBLISHABLE_KEY.length>15;
+const authUrl=()=>AUTH_URL.replace(/\/$/,'');
+let loginSession=null;try{loginSession=JSON.parse(sessionStorage.getItem('unitroca-auth-session')||'null')}catch{}
+function accountUI(){
+  const logged=!!loginSession?.user?.email;
+  $('accountButton').textContent=logged?'Meu perfil':'Entrar';
+  $('accountButton').title=loginSession?.user?.email||'Entrar com e-mail institucional';
+  if(!logged){alertsData=[];notificationsData=[];updateNotificationBadge()}
+}
+function authMessage(message,kind){$('authResult').textContent=message;$('authResult').className='auth-result '+(kind||'')}
+async function authRequest(path,body,token){const response=await fetch(authUrl()+'/auth/v1/'+path,{method:body?'POST':'GET',headers:{'apikey':AUTH_PUBLISHABLE_KEY,...(body?{'Content-Type':'application/json'}:{}),...(token?{'Authorization':'Bearer '+token}:{})},...(body?{body:JSON.stringify(body)}:{})});const data=await response.json().catch(()=>({}));if(!response.ok)throw Error(data.msg||data.error_description||data.message||data.error||'Não foi possível concluir a operação.');return data}
+async function requireAuth(){if(!configured()||!loginSession?.access_token)return false;try{const user=await authRequest('user',null,loginSession.access_token);if(!user.email||!user.email.toLowerCase().endsWith('@unifei.edu.br')||!user.email_confirmed_at)throw Error('Confirme seu e-mail institucional antes de publicar.');loginSession.user=user;sessionStorage.setItem('unitroca-auth-session',JSON.stringify(loginSession));accountUI();return true}catch(err){loginSession=null;sessionStorage.removeItem('unitroca-auth-session');contacts.clear();purchases.clear();myAds=[];render();accountUI();authMessage(err.message||'Entre novamente para publicar.','error');return false}}
+async function processConfirmationLink(){const hash=new URLSearchParams(location.hash.slice(1));const token=hash.get('access_token');const error=hash.get('error_description');if(!token&&!error)return;history.replaceState(null,'',location.pathname+location.search);if(error){authMode('login');$('authDialog').showModal();authMessage('O link não pôde ser confirmado: '+error,'error');return}try{const user=await authRequest('user',null,token);if(!user.email?.toLowerCase().endsWith('@unifei.edu.br')||!user.email_confirmed_at)throw Error('O e-mail institucional ainda não foi confirmado.');loginSession={access_token:token,refresh_token:hash.get('refresh_token')||'',user};sessionStorage.setItem('unitroca-auth-session',JSON.stringify(loginSession));accountUI();loadContacts();loadProfileData();loadUserAlertsAndNotifications();$('toast').textContent='E-mail confirmado! Sua conta está pronta para usar.';$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',5000)}catch(err){authMode('login');$('authDialog').showModal();authMessage(String(err.message||'Não foi possível confirmar o link.'),'error')}}
+$('configAlert').hidden=configured();accountUI();processConfirmationLink();if(loginSession){loadContacts();loadProfileData();loadUserAlertsAndNotifications()}
+function authMode(mode){$('loginPanel').hidden=mode!=='login';$('registerPanel').hidden=mode!=='register';$('authTitle').textContent=mode==='register'?'Criar conta':'Entrar na UniTroca';authMessage('','')}
+$('closeAuth').onclick=()=>$('authDialog').close();$('authDialog').addEventListener('click',e=>{if(e.target===$('authDialog'))$('authDialog').close()});
+$('showRegister').onclick=()=>{const existing=$('authForm').elements.email.value;$('registerForm').elements.email.value=existing;authMode('register');$('registerForm').elements.name.focus()};
+$('showLogin').onclick=()=>{const existing=$('registerForm').elements.email.value;$('authForm').elements.email.value=existing;authMode('login')};
+$('accountButton').onclick=async()=>{if(loginSession){if(await requireAuth()){renderProfile();$('profileDialog').showModal();loadProfileData();loadUserAlertsAndNotifications()}else{authMode('login');$('authDialog').showModal()}return}authMode('login');$('authDialog').showModal()};
+$('closeProfile').onclick=()=>$('profileDialog').close();
+$('profileDialog').addEventListener('click',e=>{if(e.target===$('profileDialog'))$('profileDialog').close()});
+$('profileSignout').onclick=()=>{if(!loginSession)return;const token=loginSession.access_token;loginSession=null;sessionStorage.removeItem('unitroca-auth-session');contacts.clear();purchases.clear();myAds=[];alertsData=[];notificationsData=[];render();accountUI();$('profileDialog').close();if(configured())fetch(authUrl()+'/auth/v1/logout',{method:'POST',headers:{apikey:AUTH_PUBLISHABLE_KEY,Authorization:'Bearer '+token}}).catch(()=>{})};
+$('resendConfirm').onclick=async()=>{const email=String($('registerForm').elements.email.value||'').trim().toLowerCase();if(!email.endsWith('@unifei.edu.br')){authMessage('Digite seu e-mail institucional no cadastro.','error');return}if(!configured()){authMessage('O envio de e-mails ainda não está configurado.','error');return}const button=$('resendConfirm');button.disabled=true;authMessage('Enviando confirmação...','');try{await authRequest('resend',{type:'signup',email});authMessage('Se a conta estiver pendente, enviaremos outro link. Confira também a pasta de spam.','success')}catch(err){authMessage(/error sending|unexpected_failure/i.test(String(err.message))?'Não foi possível enviar o link agora. O serviço de e-mail precisa ser corrigido.':String(err.message||'Falha no envio.'),'error')}finally{button.disabled=false}};
+$('registerForm').addEventListener('submit',async e=>{e.preventDefault();const form=e.currentTarget,fd=new FormData(form),name=String(fd.get('name')||'').trim(),email=String(fd.get('email')||'').trim().toLowerCase(),city=String(fd.get('city')||''),password=String(fd.get('password')||''),confirm=String(fd.get('confirm')||'');if(!email.endsWith('@unifei.edu.br')){authMessage('Use seu e-mail @unifei.edu.br.','error');return}if(name.length<2||!['Itabira','Itajubá'].includes(city)||password.length<8||password!==confirm){authMessage('Confira o nome e as senhas. As duas senhas devem ser iguais e ter pelo menos 8 caracteres.','error');return}if(!configured()){authMessage('O envio de e-mails ainda não está configurado.','error');return}const button=form.querySelector('[type="submit"]');button.disabled=true;authMessage('Criando sua conta e enviando o link...','');try{const result=await authRequest('signup',{email,password,data:{display_name:name,city}});if(result.access_token)throw Error('A confirmação de e-mail precisa estar ativada no provedor.');form.elements.password.value='';form.elements.confirm.value='';authMessage('Cadastro solicitado. Abra seu e-mail institucional, clique no link de confirmação e depois volte para entrar.','success')}catch(err){const detail=String(err.message||'');authMessage(/error sending confirmation email/i.test(detail)?'Não foi possível enviar o link: o Gmail recusou as credenciais configuradas para o envio. Depois da correção, use “Reenviar e-mail de confirmação”.':detail||'Não foi possível criar a conta.','error')}finally{button.disabled=false}});
+$('authForm').addEventListener('submit',async e=>{e.preventDefault();const form=e.currentTarget,fd=new FormData(form),email=String(fd.get('email')||'').trim().toLowerCase(),password=String(fd.get('password')||'');if(!email.endsWith('@unifei.edu.br')){authMessage('Use seu e-mail @unifei.edu.br.','error');return}if(!configured()){authMessage('O acesso ainda não está configurado.','error');return}const button=form.querySelector('[type="submit"]');button.disabled=true;authMessage('Entrando...','');try{const result=await authRequest('token?grant_type=password',{email,password});if(!result.access_token||!result.user?.email_confirmed_at)throw Error('Confirme o link recebido no e-mail antes de entrar.');if(!result.user.email.toLowerCase().endsWith('@unifei.edu.br'))throw Error('Somente e-mails institucionais da UNIFEI.');loginSession={access_token:result.access_token,refresh_token:result.refresh_token,user:result.user};sessionStorage.setItem('unitroca-auth-session',JSON.stringify(loginSession));accountUI();await loadContacts();await loadProfileData();await loadUserAlertsAndNotifications();form.elements.password.value='';$('authDialog').close();authMessage('','')}catch(err){authMessage(String(err.message||'Não foi possível entrar.'),'error')}finally{button.disabled=false}});
+render();loadListings();
+</script></body></html>
